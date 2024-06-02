@@ -3,6 +3,8 @@ plugins {
     id("maven-publish")
 }
 
+group = "com.github.YourUsername"
+
 android {
     namespace = "com.mtrilogic.spannabletextlibrary"
     compileSdk = 34
@@ -26,13 +28,16 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     publishing {
         singleVariant("release") {
             withSourcesJar()
+            withJavadocJar()
         }
     }
 }
@@ -43,11 +48,14 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.mtrilogic"
             artifactId = "spannabletextlibrary"
-            version = "1.0"
+            version = "0.0.0"
 
-            afterEvaluate {
+            /*/afterEvaluate {
                 from(components["release"])
-            }
+                groupId = "com.mtrilogic"
+                artifactId = "spannabletextlibrary"
+                version = "0.0.0"
+            }*/
         }
     }
     repositories {
@@ -55,6 +63,19 @@ publishing {
         maven {
             name = "Repositories"
             url = uri("file:///D:/MTRI/Android/Repositories")
+        }
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                from(components["release"])
+                groupId = "com.mtrilogic"
+                artifactId = "spannabletextlibrary"
+                version = "0.0.0"
+            }
         }
     }
 }
