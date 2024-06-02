@@ -3,8 +3,6 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.github.YourUsername"
-
 android {
     namespace = "com.mtrilogic.spannabletextlibrary"
     compileSdk = 34
@@ -43,19 +41,19 @@ android {
 }
 
 // Nuestro archivo básico de publicación en repositorios
-publishing {
+/*publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "com.mtrilogic"
             artifactId = "spannabletextlibrary"
             version = "0.0.0"
 
-            /*/afterEvaluate {
+            afterEvaluate {
                 from(components["release"])
                 groupId = "com.mtrilogic"
                 artifactId = "spannabletextlibrary"
                 version = "0.0.0"
-            }*/
+            }
         }
     }
     repositories {
@@ -65,7 +63,7 @@ publishing {
             url = uri("file:///D:/MTRI/Android/Repositories")
         }
     }
-}
+}*/
 
 afterEvaluate {
     publishing {
@@ -82,7 +80,7 @@ afterEvaluate {
 
 // Esto genera un archivo llamado "spannabletextlibrary.zip"
 // localizado en la carpeta build/distributions del módulo
-tasks.register<Zip>("generateMTRIAndroidRepositorie") {
+/*tasks.register<Zip>("generateMTRIAndroidRepositorie") {
     val publishTask = tasks.named(
         "publishReleasePublicationToRepositoriesRepository",
         PublishToMavenRepository::class.java)
@@ -91,7 +89,7 @@ tasks.register<Zip>("generateMTRIAndroidRepositorie") {
     })
     into("spannabletextlibrary")
     archiveFileName.set("spannabletextlibrary.zip")
-}
+}*/
 
 dependencies {
 
