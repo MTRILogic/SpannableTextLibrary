@@ -51,6 +51,7 @@ publishing {
         }
     }
     repositories {
+        mavenLocal()
         maven {
             name = "Repositories"
             url = uri("file:///D:/MTRI/Android/Repositories")
