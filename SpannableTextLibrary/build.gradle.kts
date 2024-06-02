@@ -72,7 +72,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.mtrilogic"
                 artifactId = "spannabletextlibrary"
-                version = "0.0.3"
+                version = "0.0.0"
             }
         }
     }
