@@ -1,4 +1,4 @@
-package com.mtrilogic.spannabletextlibrary;
+package com.mtrilogic.spannable;
 
 import android.content.Context;
 import android.graphics.Bitmap;

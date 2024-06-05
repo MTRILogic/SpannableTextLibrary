@@ -1,4 +1,4 @@
-package com.mtrilogic.spannabletextlibrary;
+package com.mtrilogic.spannable;
 
 import org.junit.Test;
 
