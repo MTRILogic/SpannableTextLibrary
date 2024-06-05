@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.mtrilogic.spannabletextlibrary"
+    namespace = "com.mtrilogic.spannabletext"
     compileSdk = 34
 
     defaultConfig {
@@ -71,8 +71,15 @@ afterEvaluate {
             create<MavenPublication>("maven") {
                 from(components["release"])
                 groupId = "com.mtrilogic"
-                artifactId = "spannabletextlibrary"
+                artifactId = "spannabletext"
                 version = "0.0.0"
+            }
+        }
+        repositories {
+            mavenLocal()
+            maven {
+                name = "MTRI-LocalAndroidRepository"
+                url = uri("file:///D:/MTRI/Android/Repositories")
             }
         }
     }

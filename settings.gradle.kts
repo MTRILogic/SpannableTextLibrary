@@ -23,4 +23,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "SpannableTextLibraryProject"
 include(":app")
-include(":SpannableTextLibrary")
+include(":spannabletext")
